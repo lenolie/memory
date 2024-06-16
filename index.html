@@ -14,14 +14,50 @@
         Spieler 2: 1 Punkt(e)
     </p>
     <div id="spiel">
-        <img src="./Material/assets/cat.png" alt="cat1" class="open">
-        <img src="./Material/assets/cat.png" alt="cat2" class="open">
-        <img src="./Material/assets/dog.png" alt="dog1" class="open">
-        <img src="./Material/assets/dog.png" alt="dog2" class="open">
-        <img src="./Material/assets/house.png" alt="house1" class="open">
-        <img src="./Material/assets/house.png" alt="house2" class="open">
-        <img src="./Material/assets/sheep.png" alt="sheep1" class="open">
-        <img src="./Material/assets/sheep.png" alt="sheep2" class="open">
+        <div class="image-container">
+            <img src="./Material/assets/cat.png" alt="cat1">
+            <div class="overlay"></div>
+        </div>
+        <div class="image-container">
+            <img src="./Material/assets/cat.png" alt="cat2">
+            <div class="overlay"></div>
+        </div>
+        <div class="image-container">
+            <img src="./Material/assets/dog.png" alt="dog1">
+            <div class="overlay"></div>
+        </div>
+        <div class="image-container">
+            <img src="./Material/assets/dog.png" alt="dog2">
+            <div class="overlay"></div>
+        </div>
+        <div class="image-container">
+            <img src="./Material/assets/house.png" alt="house1">
+            <div class="overlay"></div>
+        </div>
+        <div class="image-container">
+            <img src="./Material/assets/house.png" alt="house2">
+            <div class="overlay"></div>
+        </div>
+        <div class="image-container">
+            <img src="./Material/assets/sheep.png" alt="sheep1">
+            <div class="overlay"></div>
+        </div>
+        <div class="image-container">
+            <img src="./Material/assets/sheep.png" alt="sheep2">
+            <div class="overlay"></div>
+        </div>
     </div>
 </body>
+<script>
+    const bilder = document.querySelectorAll(".image-container");
+    for (const bild of bilder) {
+        bild.addEventListener("click", (element) => {
+            if(element.srcElement.classList.contains("overlay")) {
+                element.srcElement.classList.remove("overlay") 
+            } else {
+                element.srcElement.classList.add("overlay") 
+            }
+        })
+    }
+</script>
 </html>
